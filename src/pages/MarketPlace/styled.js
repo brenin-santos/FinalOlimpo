@@ -18,6 +18,17 @@ export const ContainerProgress = styled.div`
   gap: 2rem;
   background: var(--background);
 `;
+
+export const ContainerWalletAddress = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  margin: 0 20rem 2rem 20rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: var(--background);
+`;
 export const ContainerInputsButton = styled.div`
   display: flex;
   height: 40px;
