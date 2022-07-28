@@ -182,7 +182,7 @@ const Faq = () => {
             <AccordionIcon />
           </AccordionButton>
         </h2>
-        <AccordionPanel pb={4}>We battle in ETH Blockchain</AccordionPanel>
+        <AccordionPanel pb={4}>ERC721A</AccordionPanel>
       </AccordionItem>
     </Accordion>
   );

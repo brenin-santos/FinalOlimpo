@@ -36,6 +36,7 @@ export const ContainerInputsButton = styled.div`
   justify-content: center;
   gap: 0.5rem;
   margin-top: 2rem;
+  margin-bottom: 4rem;
 `;
 export const CardButton = styled.div`
   width: 270px;
@@ -143,7 +144,7 @@ export const ContainerText = styled.div`
   border: 1px solid var(--background);
 `;
 export const MintButton = styled.button`
-  height: 35px;
+  height: 40px;
   width: 220px;
   background: var(--background-middle);
   text-align: center;
@@ -160,4 +161,18 @@ export const MintButton = styled.button`
     width: 240px;
     height: 45px;
   }
+`;
+export const Banner = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  margin: 1rem 30rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: var(--background);
+
+  font-size: 24px;
+  color: white;
+  font-family: var(--text-configuration);
 `;

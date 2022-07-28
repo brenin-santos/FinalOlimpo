@@ -47,23 +47,22 @@ const Home = () => {
         <Paragraphy>ЩΣᄂᄃӨMΣ ƬӨ ƬΉΣ ΛЯΣПΛ</Paragraphy>
         {walletAddress ? (
           <Link to="/marketplace">
-            <ButtonSoldOut>MarketPlace</ButtonSoldOut>
+            <ButtonSoldOut>Mint</ButtonSoldOut>
           </Link>
         ) : (
           <ButtonSoldOut onClick={() => connectWalletPressed()}>
-            Connection Wallet
+            Connect
           </ButtonSoldOut>
         )}
 
         <ImagePet src="img/Zeus.gif" alt="Zeus" />
 
-        <TextBoldHigh>Meet Angry Dinos</TextBoldHigh>
         <TextMiddle>
           ᄃΉΛMPIӨПƧ ӨF ZΣЦƧ is a collection on ETH Blockchain based on Greek
           mythology of 10,000 warriors who fought countless battles until they
           became ᄃΉΛMPIӨПƧ .
         </TextMiddle>
-        <TextBoldHigh>FAQ</TextBoldHigh>
+        <TextBoldHigh>FΛQ</TextBoldHigh>
         <Faq />
         <TextMiddle>
           This project is a tribute to Greek mythology, an immense and vast

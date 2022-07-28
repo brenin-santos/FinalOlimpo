@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   ContainerSectionImage,
@@ -9,8 +9,27 @@ import {
 
 import { AiOutlineTwitter } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import {
+  getCurrentWalletConnected,
+  addWalletListener,
+} from "../../utils/functions/interact";
 
 const Header = () => {
+  const [walletAddress, setWalletAddress] = useState("");
+  const [status, setStatus] = useState();
+
+  useEffect(() => {
+    async function fetchData() {
+      const { address, status } = await getCurrentWalletConnected();
+      setWalletAddress(address);
+
+      setStatus(status);
+
+      addWalletListener(setStatus, setWalletAddress);
+    }
+    fetchData();
+  }, []);
+
   return (
     <Container>
       <ContainerSectionImage>
@@ -23,17 +42,28 @@ const Header = () => {
         </Link>
       </ContainerSectionImage>
       <ContainerSectionButtonsList>
-        <ButtonHigh>
-          <Link to={"/marketplace"}>Market</Link>
-        </ButtonHigh>
+        {walletAddress ? (
+          <ButtonHigh>
+            <Link to={"/marketplace"}>Market</Link>
+          </ButtonHigh>
+        ) : (
+          <></>
+        )}
+
         <ButtonLow>
-          <AiOutlineTwitter color="white" size={20}></AiOutlineTwitter>
+          <a href="https://twitter.com">
+            <AiOutlineTwitter color="white" size={20}></AiOutlineTwitter>
+          </a>
         </ButtonLow>
         <ButtonLow>
-          <img src="img/opensea.png" alt="opensea" />
+          <a href="https://twitter.com">
+            <img src="img/opensea.png" alt="opensea" />
+          </a>
         </ButtonLow>
         <ButtonLow>
-          <img src="img/etherscan.png" alt="etherscan" />
+          <a href="https://twitter.com">
+            <img src="img/etherscan.png" alt="etherscan" />
+          </a>
         </ButtonLow>
       </ContainerSectionButtonsList>
     </Container>
